@@ -1,6 +1,5 @@
-#!/bin/sh
-SCRIPT_DIR=$(dirname $(realpath $0));
-. ${SCRIPT_DIR}/fsh.sh
+#!/bin/bash
+. $(dirname $(realpath $BASH_SOURCE))/fsh.sh;
 
 echo testing iterate
 iterate 0 '[ $1 -lt 10 ]' echo |

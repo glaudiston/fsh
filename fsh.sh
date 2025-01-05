@@ -1,7 +1,7 @@
-#!/bin/sh
-SCRIPT_DIR=$(dirname $(realpath $0));
+#!/bin/bash
+SOURCE_DIR=$(dirname $(realpath $BASH_SOURCE));
 
-. ${SCRIPT_DIR}/monoid.sh
+. ${SOURCE_DIR}/monoid.sh
 
 iterate()
 {
