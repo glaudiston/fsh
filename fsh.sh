@@ -1,7 +1,9 @@
 #!/bin/bash
-SOURCE_DIR=$(dirname $(realpath $BASH_SOURCE));
-
-. ${SOURCE_DIR}/monoid.sh
+import(){
+	local SOURCE_DIR=$(dirname $(realpath $BASH_SOURCE));
+	. ${SOURCE_DIR}/monoid.sh
+}
+import;
 
 iterate()
 {
