@@ -1,4 +1,6 @@
 #!/bin/bash
+. $(dirname $(realpath $BASH_SOURCE))/../pragma_once.sh && return 0
+
 import(){
 	local SOURCE_DIR=$(dirname $(realpath $BASH_SOURCE));
 	. ${SOURCE_DIR}/monoid.sh
@@ -7,10 +9,12 @@ import;
 
 iterate()
 {
+	local rv=0;
 	eval "c(){ $2; }";
 	c $1 || return 0;
-	$3 $1;
+	$3 $1 || rv=$?;
 	iterate $(( $1 + 1 )) "$2" "$3";
+	return $rv
 }
 
 filter()
