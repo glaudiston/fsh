@@ -1,9 +1,6 @@
 #!/bin/bash
-
-# --- Setup ---
 SCRIPT_DIR=$(dirname $(realpath $0))
-. ${SCRIPT_DIR}/fsh.sh
-. ${SCRIPT_DIR}/monoid.sh
+. $(dirname $(realpath $BASH_SOURCE))/fsh.sh;
 
 # --- MOCKS (Required for the tests to run) ---
 getUser() { echo "user_123"; }

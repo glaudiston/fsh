@@ -1,14 +1,14 @@
 #!/bin/bash
-SCRIPT_DIR=$(dirname $(realpath $0));
-
-. ${SCRIPT_DIR}/monoid.sh
+. $(dirname $(realpath $BASH_SOURCE))/monoid.sh
 
 iterate()
 {
+	local rv=0;
 	eval "c(){ $2; }";
 	c $1 || return 0;
-	$3 $1;
+	$3 $1 || rv=$?;
 	iterate $(( $1 + 1 )) "$2" "$3";
+	return $rv
 }
 
 filter()
