@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 . "$(dirname "$(realpath "${BASH_SOURCE[0]}")")/../pragma_once/bash/import_bash.sh";
 import_bash ./monoid.sh
 
