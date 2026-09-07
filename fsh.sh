@@ -1,11 +1,7 @@
 #!/bin/bash
-. $(dirname $(realpath $BASH_SOURCE))/../pragma_once.sh && return 0
 
-import(){
-	local SOURCE_DIR=$(dirname $(realpath $BASH_SOURCE));
-	. ${SOURCE_DIR}/monoid.sh
-}
-import;
+. "$(dirname "$(realpath "${BASH_SOURCE[0]}")")/../pragma_once/bash/import_bash.sh";
+import_bash ./monoid.sh
 
 iterate()
 {
